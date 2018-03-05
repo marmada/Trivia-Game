@@ -1,46 +1,9 @@
-var triviaQ = [{
-    qu: "#?",
-    options: ["1", "2", "3", "4"],
-    correctAnswer: "2",
-    image: "#"
-}, {
-    qu: "#?",
-    options: ["1", "2", "3", "4"],
-    correctAnswer: "3",
-    image: "#"
-}, {
-    qu: "#?",
-    options: ["1", "2", "3", "4"],
-    correctAnswer: "4",
-    image: "#"
-}, {
-    qu: "#?",
-    options: ["1", "2", "3", "4"],
-    correctAnswer: "1",
-    image: "#"
-}, {
-    qu: "#?",
-    options: ["1", "2", "3", "4"],
-    correctAnswer: "2",
-    image: "#"
-}, {
-    qu: "#?",
-    options: ["1", "2", "3", "4"],
-    correctAnswer: "3",
-    image: "#"
-}, {
-    qu: "#?",
-    options: ["1", "2", "3", "4"],
-    correctAnswer: "4",
-    image: "#"
-},];
-
-
 
 // Timer Set up 
 
 var time=30;
 var clock;
+
 
 function run() {
     clearInterval(clock);
@@ -63,17 +26,35 @@ function stopT() {
     clearInterval(clock);
 }
 
-// on start bring question 1 hide start button
 
-var CurrentQ = triviaQ[0];
-var answC = 0
-var incorrC = 0
+var unAns= 10
+var answC = 0;
+var incorrC = 0;
 
-function StartGame () {
 
-    $(".startB").hide()
-    $(".question")html()
-}
+$(document).ready(function(){
+
+function game(){
+$("input").on("click", function(){
+
+    var ansQ = $("input:checked").val();
+    console.log(ansQ);
+
+if (ansQ =="1") {
+    answC++;
+    unAns--;
+    
+  }
+
+  else{
+    incorrC++;
+    unAns--;
+  }
+
+
+});}
+
+});
 
 
 
