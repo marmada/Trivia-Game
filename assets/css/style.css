@@ -34,7 +34,7 @@ padding: 16px;
 
 .gameA{
     background-color:rgba(52, 73, 94, 0.452);
-    height: 600px;
+    height: 400px;
 
 }
 
@@ -45,6 +45,7 @@ padding: 16px;
     border-width: 3px;
     padding: 20px;
     border-radius: 5px;
+    background-color:rgba(52, 73, 94, 0.452);
 }
 
 .question{
@@ -88,8 +89,13 @@ border-radius: 5px;
 
 #trivia{
     margin-top: 10PX;
+    display: none;
 }
 
+#final{
+    margin-top: 10PX;
+    display: none;
+}
 .default{
 
     display:none;

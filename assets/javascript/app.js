@@ -4,12 +4,24 @@
 var time = 120;
 var clock;
 
+ // count  scores
 
+var unAns = 10
+var answC = 0;
+var incorrC = 0;
+
+// game master
+
+var screenA = $("#loaded")
+var screenB = $("#trivia")
+var screenC = $("#final")
+
+// funtion Timer
 function run() {
     clearInterval(clock);
     clock = setInterval(decrement, 1000);
-    
-}
+    }
+
 function decrement() {
     //   Decrease number by one.
     time--;
@@ -27,10 +39,11 @@ function decrement() {
         return;
     }
 }
+
 function stopT() {
     clearInterval(clock);
 }
-
+// standarize timer
 function timeConverter(t) {
 
     var minutes = Math.floor(t / 60);
@@ -50,11 +63,6 @@ function timeConverter(t) {
     return minutes + ":" + seconds;
 }
 
-
-
-var unAns = 10
-var answC = 0;
-var incorrC = 0;
 
 function game() {
     $("input").on("click", function () {
@@ -79,6 +87,18 @@ function game() {
 }
         $(document).ready(function () {
 
+            $(".startB").click(function(){
+
+                $("#loaded").hide();
+                $("#trivia").show();
+
+                run();
+                game();
+
+            }
+
+                
+            );
 
         });
     
