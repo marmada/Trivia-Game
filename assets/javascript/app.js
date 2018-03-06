@@ -4,7 +4,7 @@
 var time = 120;
 var clock;
 
- // count  scores
+// count  scores
 
 var unAns = 10
 var answC = 0;
@@ -20,7 +20,7 @@ var screenC = $("#final")
 function run() {
     clearInterval(clock);
     clock = setInterval(decrement, 1000);
-    }
+}
 
 function decrement() {
     //   Decrease number by one.
@@ -73,35 +73,62 @@ function game() {
         if (ansQ == "1") {
             answC++;
             unAns--;
-            $("correct").text("Correct:" + answC);
+            $("#correct").text("Correct:" + answC);
+            $("#incorrect").text("Incorrect:" + incorrC);
+            $("#notAnsw").text("Not Answered:" + unAns);
+            
+            if(unAns === 0){
+                stopT();
+                $("#trivia").css({'display':'none'});
+                $("#final").show();
+             
+            }
 
+            else{
+
+                return;
+            }
         }
 
         else {
             incorrC++;
             unAns--;
+            $("#correct").text("Correct:" + answC);
+            $("#incorrect").text("Incorrect:" + incorrC);
+            $("#notAnsw").text("Not Answered:" + unAns);
+            
+            if(unAns === 0){
+                stopT();
+                $("#trivia").css({'display':'none'});
+                $("#final").show();
+            }
+                else{
+
+                    return;
+                }
+             
         }
 
     });
 
 }
-        $(document).ready(function () {
 
-            $(".startB").click(function(){
+$(document).ready(function () {
 
-                $("#loaded").hide();
-                $("#trivia").show();
+    $(".startB").click(function () {
 
-                run();
-                game();
+        $("#loaded").css({'display':'none'});
+        $("#trivia").show();
 
-            }
+        run();
+        game();
 
-                
-            );
+    }
 
-        });
-    
+    );
+
+});
+
 
 
 
